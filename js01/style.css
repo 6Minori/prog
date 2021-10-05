@@ -1,0 +1,42 @@
+body{ 
+    margin: 0;
+width: 100vw;
+height: 100vh;
+background-color: bisque;
+    }
+picture{
+background-position: left top;
+background-repeat: no-repeat;
+}
+h1{
+    font-size:50px; 
+    color:#ff91006b;
+    margin-top: 2rem;
+    margin-left:10rem;
+}
+h2{
+    font-size:35px; 
+    color:#4c4c4eab;
+    margin-top: 2rem;
+    margin-left:10rem;
+}
+h3{
+    font-size:35px; 
+    color:#4c4c4eab;
+    margin-top: 2rem;
+    margin-left:10rem;
+}
+p{
+    margin-top: 1rem;
+    margin-left:10rem;
+    font-size: 1rem;
+}
+li{
+    margin-top: 1rem;
+    margin-left:10rem;
+    font-size: 1rem;
+}
+
+
+
+
