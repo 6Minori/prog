@@ -1,0 +1,91 @@
+/*====================
+*ページ全体
+*======================*/
+
+body {
+    background-color: bisque;
+    
+  }
+  header,main, #footlinks {
+   width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /*=====================
+  *ヘッダー
+  *======================*/
+  header{
+    margin-top:  36px;
+    text-align:  left;
+    text-align:  left;
+  }
+
+  #logo, img{
+    vertical-align: baseline;
+  }
+  
+  nav+picture {
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+  
+  nav+picture img {
+    width: 1000px;
+  }
+  #logo, img{
+    vertical-align:  bottom;
+  }
+  
+  /*=====================
+  *メインコンテンツ
+  *======================*/
+  main {
+    margin-bottom: 2.4rem;
+  }
+
+  h1 {
+    position: relative;
+    text-align:  center;
+    padding: 0.25em 1em;
+    
+  }
+  
+h2 {
+    color:#4c4c4eab;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+h3 {
+    color:#4c4c4eab;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+p{
+    margin-top: 1rem;
+    margin-left:10rem;
+    font-size: 1rem;
+}
+li{
+    margin-top: 1rem;
+    margin-left:10rem;
+    font-size: 1rem;
+}
+
+  /*=====================
+  *フッター
+  *======================*/
+  #footer{
+    padding: 0.5rem;
+    padding-bottom: 1.4rem;
+    background: #e7e7bf;
+  }
+  #footlinks section:nth-child(n+2) {
+    margin-left: 1.2rem;
+  }
+  #copyright{
+    color: #999;
+    text-align: center;
+    font-size: 0.82rem
+  }
