@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>クイズ</title>
+</head>
+<body>
+
+<header>
+    <h1>クイズ</h1>
+    <h2></h2>
+</header>
+
+<main>
+  <p id="quest">ここに問題が出題されます</p>
+  <p>
+    <input type="radio" name="toi" value="1"><span id="toi1">選択肢１</span>
+    <input type="radio" name="toi" value="2"><span id="toi2">選択肢２</span>
+    <input type="radio" name="toi" value="3"><span id="toi3">選択肢３</span>
+  </p>
+  
+</main>
+
+<footer></footer>
+<script>
+const a = 'ゲームを開始します。';
+alert (a);
+//ここから記述領域［START］
+  //以下に配列を記述してください。
+  //問題文[配列]
+const qs=[
+  "通るときには閉まって、通らないときには開いているものは何？",
+  "話すことが好きな道具は？",
+  "世界の真ん中にいる虫は？",
+  "持つだけで手が震えてしまう家具は何？",
+  "お父さんが嫌いな食べ物は何？",
+  "お酒は20歳、タバコも20歳、車に乗れるのは何歳から？"
+];
+    
+  //回答選択肢[多重配列]
+const toi=[
+["踏切","洗濯機","冷蔵庫"],
+["スプーン","シャベル","しゃもじ"],
+["てんとう虫","カマキリ","蚊"],
+["イス","テーブル","本棚"],
+["パパイヤ","レバー","キャベツ"],
+["20歳","0歳","18歳"]
+];
+    
+  //答え[配列]
+const ans=[1,2,3,2,1,2];
+
+  //1.最初の問題文＆回答選択肢＆回答値を設定
+let i=0;
+$("#quest").text(qs[i]);
+$("#toi1").html(toi[i][0]);
+$("#toi2").html(toi[i][1]);
+$("#toi3").html(toi[i][2]);
+
+    
+
+  //2.ラジオボタンをクリックしたらイベント発生！(クリックイベント)
+  $("[name=toi]").on("click",function(){
+    const v=$(this).val();
+    if(ans[i]==v){
+    $("h2").text("正解！");
+  }else{
+    $("h2").text("不正解");
+  }
+  i++;
+    $("#quest").text(qs[i]);
+    $("#toi1").html(toi[i][0]);
+    $("#toi2").html(toi[i][1]);
+    $("#toi3").html(toi[i][2]);
+  });
+  
+
+///何問目
+
+
+///
+
+
+
+
+
+
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>
