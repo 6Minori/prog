@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const o1={
+            name:"yama",
+            email:"test@cst.jp",
+            address:"Tokyo"
+        };
+    //JSON文字列（オブジェクト変数をテキスト化して保存できるようにしている。JSON.stringify）
+    const json=JSON.stringify(o1);//jsonを使って、上の部分が表記される。jsonとはオブジェクト変数をテキスト化したもの。        
+    localStorage.setItem("OBJ",json);
+    const val=localStorage.getItem("OBJ");
+    const obj=JSON.parse(val);
+    console.log(val);
+    </script>
+</body>
+</html>
