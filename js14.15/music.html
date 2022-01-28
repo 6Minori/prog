@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/music.css">
+  <title>音楽</title>
+</head>
+<body>
+  <h1>イントロ・どん</h1>
+  <input type="button" onclick="history.back()" value="戻る"style="position: absolute; right: 20px; top: 10px">
+  
+  <main>
+      <div class="quiz-container">
+        <h2>第1問 King Gnu</h2>
+    <audio id="myMusic" controls>
+        <source src="haku.mp3">
+    </audio>
+    <form id="quiz-1">
+      <input name="answer" type="radio" value="a">白日</input>
+      <input name="answer" type="radio" value="b">白目</input>
+    </form>
+    <button class="btn" type="button" onclick="answerQuiz1();">回答する</button>
+  
+      <h2>第2問 マカロニえんぴつ</h2>
+    <audio id="myMusic2" controls>
+        <source src="nanndemoin.mp3">
+    </audio>
+    <form id="quiz-2">
+      <input name="answer" type="radio" value="a">なんでもないよ、</input>
+      <input name="answer" type="radio" value="b">はしりがき</input>
+    </form>
+    <button class="btn" type="button" onclick="answerQuiz2();">回答する</button>
+    
+    <h2>第3問 クリープハイプ</h2>
+      <audio id="myMusic3" controls>
+          <source src="poriko in.mp3">
+      </audio>
+      <form id="quiz-3">
+        <input name="answer" type="radio" value="a">二人の間</input>
+        <input name="answer" type="radio" value="b">ポリコ</input>
+      </form>
+      <button class="btn" type="button" onclick="answerQuiz3();">回答する</button>
+    
+</div>
+  </main>
+
+
+    <script>
+
+  // 再生開始
+function start_music(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.play();
+}
+// 再生停止（一時停止）
+function start_pause(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.pause();
+}
+
+function start_music(){
+    var audioObj = document.getElementById("myMusic2");
+    audioObj.play();
+}
+// 再生停止（一時停止）
+function start_pause(){
+    var audioObj = document.getElementById("myMusic2");
+    audioObj.pause();
+}
+
+function start_music(){
+    var audioObj = document.getElementById("myMusic3");
+    audioObj.play();
+}
+// 再生停止（一時停止）
+function start_pause(){
+    var audioObj = document.getElementById("myMusic3");
+    audioObj.pause();
+}
+
+
+    </script>
+<script>
+const correct = '正解です';
+const incorrect = '不正解です';
+function answerQuiz1() {
+    const quiz_1 = document.getElementById('quiz-1');
+    const select = '1問目：' + quiz_1.answer.value + 'を選択しました';
+
+    if (quiz_1.answer.value == 'a') {
+      console.log(select);
+      console.log(correct);
+      alert('正解');
+      // 正解はA
+    } else if (quiz_1.answer.value == 'b') {
+      console.log(select);
+      console.log(incorrect);
+      alert('不正解');
+      
+    } else {
+        alert('1問目の答えを入力してください');
+    }
+  }
+ 
+  function answerQuiz2() {
+    const quiz_2 = document.getElementById('quiz-2');
+    const select = '2問目：' + quiz_2.answer.value + 'を選択しました';
+
+    if (quiz_2.answer.value == 'a') {
+      console.log(select);
+      console.log(correct);
+      alert('正解');
+      // 正解はA
+    } else if (quiz_2.answer.value == 'b') {
+      console.log(select);
+      console.log(incorrect);
+      alert('不正解');
+      
+    } else {
+        alert('2問目の答えを入力してください');
+    }
+  }
+
+  function answerQuiz3() {
+    const quiz_3 = document.getElementById('quiz-3');
+    const select = '3問目：' + quiz_3.answer.value + 'を選択しました';
+
+    if (quiz_3.answer.value == 'a') {
+      console.log(select);
+      console.log(incorrect);
+      alert('不正解');
+  
+    // 正解はB
+    } else if (quiz_3.answer.value == 'b') {
+      console.log(select);
+      console.log(correct);
+      alert('正解');
+      
+    } else {
+        alert('3問目の答えを入力してください');
+    }
+  }
+ 
+
+</script>
+</body>
+</html>
