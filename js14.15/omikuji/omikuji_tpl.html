@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+    <html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+    <div>
+        <audio id="myMusic" loop>
+            <source src="ennniti.mp3">
+        </audio>
+        <audio id="myMusic2" preload="auto">
+            <source src="don.mp3" type="audio/mp3">
+            
+         </audio>
+    </div>
+    <form>
+        <input type="button" value="再生" onclick="start_music()" >
+        <input type="button" value="停止" onclick="start_pause()">
+        <input type="button" value="↑" onclick="volume_up()">
+        <input type="button" value="↓" onclick="volume_down()">
+        
+    </form>
+
+        <input type="button" onclick="history.back()" value="戻る"style="position: absolute; right: 20px; top: 10px">
+<header>
+    <h1>おみくじ</h1>
+</header>
+
+<main>
+    <ul>
+        <li id="pull">おみくじを引く</li>
+    </ul>
+    <p id="echo"></p>
+</main>
+
+<script>
+            // 再生開始
+function start_music(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.play();
+}
+// 再生停止（一時停止）
+function start_pause(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.pause();
+}
+// 音量アップ
+function volume_up(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.volume = audioObj.volume + 0.1;
+}
+// 音量ダウン
+function volume_down(){
+    var audioObj = document.getElementById("myMusic");
+    audioObj.volume = audioObj.volume - 0.1;
+}
+
+
+//日時取得
+var  now = new Date();
+    var  year = now.getFullYear();
+    var  month = now.getMonth() + 1;  //月は必ず +１をする！
+    var  date = now.getDate();
+    var  day = now.getDay();  //曜日[0=日曜日,1=月曜日...]
+    var day_arr = ['日', '月', '火', '水', '木', '金', '土']
+    var day = day_arr[now.getDay()];
+    var  h = now.getHours();
+    var  m = now.getMinutes();
+    var ampm;
+    if(h<=12){
+        ampm="午前"
+    }else if(12< h && h <= 17){
+        ampm="午後"
+    }else if(17< h && h <= 23){
+        ampm="夜"
+    }
+
+
+
+    //日時表示文字列の作成
+    var str = "現在日時：";
+alert( str + year+"年"+ month+"月"+date+"日 "+day+"曜日"+ampm+h+"時"+m+"分" );
+alert("今日の運試しスタート！");
+
+//クリックイベントのブロック
+// const pull=document.querySelector("#pull");
+window.onload = () => {
+        const se = document.querySelector('#myMusic2');
+        document.querySelector("#pull").addEventListener("click", function()  {
+            document.getElementById("myMusic2").currentTime = 0;
+            document.getElementById("myMusic2").play();
+            
+        });
+};//効果音
+
+pull.onclick=function(){
+    //乱数の制作
+    const num=Math.ceil(Math.random()*5);
+   
+    //乱数をif分岐処理
+    // alert("結果は！！！");
+    if(num==1){
+        const echo= document.querySelector("#echo");
+        echo.innerHTML="大吉";
+    }
+    if(num==2){
+        const echo= document.querySelector("#echo");
+        echo.innerHTML="中吉";
+       
+    }
+    if(num==3){
+        const echo= document.querySelector("#echo");
+        echo.innerHTML="小吉";
+       
+    }
+    if(num==4){
+        const echo= document.querySelector("#echo");
+        echo.innerHTML="吉";
+    }
+    if(num==5){ 
+        const echo= document.querySelector("#echo");
+        echo.innerHTML="凶";
+    }
+    
+}
+
+</script>
+</body>
+</html>
